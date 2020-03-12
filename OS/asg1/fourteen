@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+  echo -e "Print fibonacci numbers\nUsage: ./fourteen number"
+  exit
+fi
+
+a=0
+b=1
+l=$1    # move count to alphanumeric variable
+echo -n "$b "
+
+while [ $l -gt 1 ]; do
+  temp=$b
+  (( b+=a ))
+  (( a=temp ))
+  echo -n "$b "
+  (( l-- ))     # alphanumeric variable required here (( $1-- )) does not work
+done
+
+echo ""

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ $# -ne 2 ]; then
+  echo -e "Print given word specified number of times.\n\tUsage: ./two n <word-string>"
+  exit 1
+fi
+
+while [[ $i -lt $1 ]]; do
+  echo $2
+  (( i++ ))
+done

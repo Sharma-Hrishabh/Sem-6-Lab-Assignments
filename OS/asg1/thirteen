@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+  echo -e "Find factorial of given number.\nUsage: ./thirteen number"
+  exit
+fi
+
+fact=1
+m=$1    # store into varible to accomodate the format m--
+while [ $m -gt 1 ]; do
+  (( fact*=$m ))
+  (( m-- ))
+done
+
+echo $fact

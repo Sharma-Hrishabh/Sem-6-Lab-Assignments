@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+  echo -e "Print number of executable in sub directory of specified directory.\n\tUsage: ./eight <directory1> [<directory2>....]"
+  exit 1
+fi
+
+for path in "$@"; do
+  if [ -d "$path" ]; then
+    echo -n "Blocks (in bytes) used by \"$path\" : "
+    du --max-depth=0 -b  "$path/" | cut -f -1
+  else
+    echo -e "\n$path - Not a directory"
+  fi
+done

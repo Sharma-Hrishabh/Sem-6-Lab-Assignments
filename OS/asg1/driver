@@ -1,0 +1,62 @@
+#!/bin/bash
+echo -e "(1) Shell script Program to accept a character and check whether it is an\n\t-Lower case alphabet\n\t-Upper case alphabet\n\t-A digit\n\t-Special symbol\n\t-Vowel\n-Using case control structure\n(2) Using case .. esac structure\n\t-Find the number of users logged into the system\n\t-Print the calendar for current year\n\t-Print the date\n(3) Shell Script Program to check whether given file is a directory or not.\n(4) Shell Script Program to Count number of files in a Directory.\n(5) Shell Script Program to copy contents of one file to another.\n(6) Write a shell script to add two numbers supplied by user and supplied as command line argument.\n(7) Write a shell script to find out biggest number form given three numbers. Numbers are supplied by command line argument.\n(8) Implement simple calculator.Numbers are supplied by command line argument.\n(9) Write a shell script to print numbers in descending order using while loop.\n(10) Write a shell script to create a simple calculator using switch-case statement.\n(11) Write a shell script to print given number in reverse order.\n(12) Write a shell script to print sum of all digits of a given number.\n(13) Find the factorial value of given input number.\n(14) Generate and display Fibonacci series.\n(15) Display all even numbers within given range.\n(16) Find out number of characters, words and lines from a given file.\n(17) Exit"
+while [ 1 ]; do
+  read -r choice
+  case $choice in
+
+    1)
+      ./one
+      ;;
+    2)
+      ./two
+      ;;
+    3)
+      ./three
+      ;;
+    4)
+      ./four
+      ;;
+    5)
+      ./five
+      ;;
+    6)
+      ./six
+      ;;
+    7)
+      ./seven
+      ;;
+    8)
+      ./eight
+      ;;
+    9)
+      ./nine
+      ;;
+    10)
+      ./ten
+      ;;
+    11)
+      ./eleven
+      ;;
+    12)
+      ./twelve
+      ;;
+    13)
+      ./thirteen
+      ;;
+    14)
+      ./fourteen
+      ;;
+    15)
+      ./fifteen
+      ;;
+    16)
+      ./sixteen
+      ;;
+    17)
+      exit
+      ;;
+    *)
+      echo "Invalid choice"
+      ;;
+  esac
+done

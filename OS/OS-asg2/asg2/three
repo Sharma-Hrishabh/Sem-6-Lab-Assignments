@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+  echo -e "Count blank lines in a give file.\n\t Usage : ./three <file-path>"
+  exit 1
+fi
+
+if [ -f $1 ]; then
+  echo `cat $1 | grep -c "^$"`
+else
+  echo "File not found!"
+fi

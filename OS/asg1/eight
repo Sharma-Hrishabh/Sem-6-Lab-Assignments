@@ -1,0 +1,29 @@
+#!/bin/bash
+
+if [ $# -ne 3 ]; then
+  echo -e "Simple calculator\nUsage: ./eight  operation number1 number2"
+  exit
+fi
+
+case $1 in
+
+    1)
+      echo $(( $2+$3 ))
+#      expr $2 + $3
+      ;;
+    2)
+      echo $(( $2-$3 ))
+#      expr $2 - $3
+      ;;
+    3)
+      echo $(( $2*$3 ))
+#      expr $2 \* $3    # escape the special character for multiplication
+      ;;
+    4)
+      echo $(( $2/$3 ))
+#      expr $2 / $3
+      ;;
+    *)
+      echo "Invalid operation"
+      ;;
+esac

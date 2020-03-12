@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+  echo -e "Print sum of digits of number\nUsage: ./twelve number"
+  exit
+fi
+
+l=${#1}           # length of the number given as parameter
+(( m=0 ))         # intialise sum as 0
+
+echo "Number of digits = $l"
+while [ "$l" -gt -1 ]; do
+  d=${1:$l:1}               # ${var:offset:length}
+  (( m+=d ))
+  (( l-- ))
+done
+
+echo "Sum of digits = $m"

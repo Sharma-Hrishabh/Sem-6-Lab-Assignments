@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+  echo -e "Show file changed in last 24 hours.\n\tUsage: ./ten <directory-to-search>"
+  exit 1
+fi
+
+if [ -d $1 ]; then
+  find $1 -ctime -1
+else
+  echo "Not a directory."
+fi

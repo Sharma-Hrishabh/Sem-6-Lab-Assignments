@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+  echo -e "Print numbers in descending order\nUsage: ./nine input-file"
+  exit
+fi
+
+cat $1 | sort -nr

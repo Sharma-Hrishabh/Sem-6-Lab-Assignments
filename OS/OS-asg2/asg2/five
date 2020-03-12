@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+  echo -e "Print the filetype for specified file.\n\tUsage: ./five <file-path>"
+  exit 1
+fi
+
+file "$1" | cut -d ':' -f 2-

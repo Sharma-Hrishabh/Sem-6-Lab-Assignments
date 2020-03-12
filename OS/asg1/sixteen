@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+  echo -e "Counts words letters and line in file.\nUsage: ./sixteen filename"
+  exit
+fi
+
+# check for valid file
+if [ ! -f $1 ]; then
+  echo "Invalid file or file does not exist."
+  exit
+fi
+
+c=$(cat $1 | wc -c)
+w=$(cat $1 | wc -w)
+l=$(cat $1 | wc -l)
+
+echo -e "Character = $c\nWords = $w\nLine = $l"

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+time=$(date +%p)
+if [[ "$time" -eq "PM" ]]; then
+  echo "Good Evening!"
+else
+  echo "Good Morning!"
+fi

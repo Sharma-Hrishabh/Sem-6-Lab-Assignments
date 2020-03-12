@@ -1,0 +1,17 @@
+#!/bin/bash
+if [ $# -lt 1 ]; then
+    echo "Usage: ./three <file-location-directory>"
+    exit
+fi
+
+# use '-l' - list in logn format
+# use '-d' - list the directory itself and not the content
+v=$(ls $1 -ld | grep "^d" -c)
+# use '^d' - to filter the directories
+# use '-c' - give the count of filters
+
+if [ $v == 1 ]; then
+    echo "Is a directory"
+else
+    echo "Not a directory."
+fi

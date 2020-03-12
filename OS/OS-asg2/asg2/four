@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+  echo -e "Print file greater than 10 bytes in descending order.\n\tUsage: ./four <filename> <file-size>"
+  exit 1
+fi
+
+echo ""
+
+# make array from list
+# mind the quoting "$(...)" keeps the formatting,
+# else words split using default whitespaces (' ' '\n') etc.
+list=( "$(ls -lSr $1 | awk '{if ($5 > 10) print $9 " - " $5 }')" )
+echo "${list[@]}"    # quoting required to keep line split
+
+echo -e -n "\nTotal files: "
+echo "${list[@]}" | wc -l     # quoting required to keep line split

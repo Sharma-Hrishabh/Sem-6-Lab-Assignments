@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+  echo -e "Print number of executable in sub directory of specified directory.\n\tUsage: ./eight <directory>"
+  exit 1
+fi
+
+if [ -d "$1" ]; then
+  cd "$1" || exit
+  list=( "$(ls -1)" )
+
+  echo -e "Directory\t\tCount"
+  for item in ${list[@]}; do
+    if [ -d "$item" ]; then
+      echo -ne "$item\t\t"
+      find "./$item/" -maxdepth 1 -perm /111 -type f,l -print | wc -l
+    fi
+  done
+
+else
+  echo "Not a directory."
+fi

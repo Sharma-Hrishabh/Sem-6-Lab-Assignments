@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+  echo -e "Find top level files in sub-directories of specified directory.\n\tUsage: ./six <directory>"
+  exit 1
+fi
+
+if [ -d $1 ]; then
+  list=( "$(ls -1 $1)" )
+
+  cd $1 || exit
+  echo -e "Sub-dir\t\t\tFiles"
+
+  for item in ${list[@]}; do
+    if [ -d "$item" ]; then
+      echo -en "$item\t\t"
+      echo $(( $(ls -l $item | grep "^d" -v -c) - 1 ))
+    fi
+  done
+else
+  echo "Not a directory."
+fi

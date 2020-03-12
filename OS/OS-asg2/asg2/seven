@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ $# -ne 2 ]; then
+  echo -e "Search for specified word in all files of a directory and print the file name in which a match is found.\n\tUsage: ./seven <directory> word"
+  exit 1
+fi
+
+if [ -d "$1" ]; then
+  list=( "$(ls -1 "$1")" )
+
+  cd "$1" || exit
+
+  for item in ${list[@]}; do
+    if [ -f "$item" ]; then
+      count=$(grep -c "$2" "$item")
+      if [ "$count" -gt 0 ]; then
+        echo "$item"
+      fi
+    fi
+  done
+else
+  echo "Not a directory."
+fi

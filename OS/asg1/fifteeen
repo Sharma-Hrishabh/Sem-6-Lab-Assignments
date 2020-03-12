@@ -1,0 +1,31 @@
+#!/bin/bash
+
+if [ $# -ne 2 ]; then
+  echo -e "Print even numbers in given range\nUsage: ./fifteen start end"
+  exit
+fi
+
+# assign smaller number as start
+# bigger number as end
+if [ $1 -lt $2 ]; then
+  start=$1
+  end=$2
+else
+  start=$2
+  end=$1
+fi
+
+o=$(expr $start % 2)    # check for odd/even start
+if [ $o -eq 1 ]; then
+  (( start++ ))       # increment the start to even value
+fi
+
+(( end++ ))   # increment end to keep the provided end inclusive
+
+while [ $start -lt $end ]; do
+  echo -n "$start "
+  (( start+=2 ))
+
+done
+
+echo ""   # send prompt to new line

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        #snake_game{
+            border: 2px solid white;
+        }
+        #over{
+            width:400px;
+            margin: 0 auto;
+            display: none;
+        }
+        #buttons{
+            width:400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+    <h1 class="text-center" style="padding: 10px;color: green;">THE SNAKER</h1>
+    <h1 class="text-right" style="padding: 10px;color: green;">Score:<span id="score">0</span></h1>
+    <center><canvas id="snake_game" width="600px" height="600px"> </canvas></center>
+        <div id="over">
+            <h1 class="text-center" style="color:red">GameOver</h1>
+            <center><button class="btn btn-primary text-center" onclick="again()">Restart</button></center>
+        </div>
+</body>
+<script src="game.js"></script>
+</html>

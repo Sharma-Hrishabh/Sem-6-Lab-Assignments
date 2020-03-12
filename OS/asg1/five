@@ -1,0 +1,36 @@
+#!/bin/bash
+
+if [ $# -lt 2 ];
+then
+  echo "Usage: ./five input-file output-file"
+  exit
+fi
+
+if [ ! -f $1 ]; then
+  echo "Input file does not exist."
+  exit 1
+elif [ -f $2 ]; then
+  echo -e "Output file already exists.\nOverwrite? [y/n]"
+else
+  cp $1 $2
+  exit
+fi
+
+
+while [ 1 ];
+do
+read -n1 c
+case $c in
+
+  [yY])
+    cp $1 $2
+    exit
+    ;;
+  [nN])
+    exit
+    ;;
+  *)
+    echo -e "Invalid input $c Input 'y' or 'n'"
+    ;;
+esac
+done

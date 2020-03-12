@@ -1,0 +1,26 @@
+#!/bin/sh
+if [ $# -lt 1 ];
+then
+  echo "Usage: ./one <character>"
+  exit
+fi
+case $1 in
+    [aeiouAEIOU])
+      echo "Vowel"
+      ;;
+    [A-Z])
+      echo "Uppercase alphabet"
+      ;;
+    [a-z])
+      echo "Lowercase alphabet"
+      ;;
+    [0-9])
+      echo "Digit"
+      ;;
+    [^a-zA-A0-9])
+      echo "Special symbol"
+      ;;
+    *)
+      echo "No input provided."
+      ;;
+esac
